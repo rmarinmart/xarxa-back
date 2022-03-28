@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `alumnos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `alumnos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE utf8_spanish_ci,
   `apellidos` text COLLATE utf8_spanish_ci,
   `esopres1` binary(1) DEFAULT NULL,
@@ -51,7 +51,8 @@ CREATE TABLE `alumnos` (
   `fpbpres2` binary(1) DEFAULT NULL,
   `fpbpresobs2` text COLLATE utf8_spanish_ci,
   `fpbdev2` binary(1) DEFAULT NULL,
-  `fpbdevobs2` text COLLATE utf8_spanish_ci
+  `fpbdevobs2` text COLLATE utf8_spanish_ci,
+  PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -67,7 +68,7 @@ UNLOCK TABLES;
 
 ALTER TABLE alumnos ADD COLUMN createdAt DATE DEFAULT NULL;
 ALTER TABLE alumnos ADD COLUMN updatedAt DATE DEFAULT NULL;
-ALTER TABLE alumnos ADD PRIMARY KEY (id);
+/*ALTER TABLE alumnos ADD PRIMARY KEY (id);*/
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
