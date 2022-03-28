@@ -1,4 +1,4 @@
-"cod";"nombre";"apellidos";"1esopres";"1esopresobs";"1esodev";"1esodevobs";"2esopres";"2esopresobs";"2esodev";"2esodevobs";"3esopres";"3esopresobs";"3esodev";"3esodevobs";"4esopres";"4esopresobs";"4esodev";"4esodevobs";"1fpbpres";"1fpbpresobs";"1fpbdev";"1fpbdevobs";"2fpbpres";"2fpbpresobs";"2fpbdev";"2fpbdevobs"
+cod;nombre;apellidos;1esopres;1esopresobs;1esodev;1esodevobs;2esopres;2esopresobs;2esodev;2esodevobs;3esopres;3esopresobs;3esodev;3esodevobs;4esopres;4esopresobs;4esodev;4esodevobs;1fpbpres;1fpbpresobs;1fpbdev;1fpbdevobs;2fpbpres;2fpbpresobs;2fpbdev;2fpbdevobs
 1005;"ADRIAN";"COSTA COLON";0;;0;;1;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 1006;"VICENTE";"DELTELL CARRILLO";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 1009;;"GOMEZ BEL";0;;0;;0;;0;;0;;0;;1;;1;;0;;0;;0;;0;
@@ -104,8 +104,7 @@
 1115;"JOAN";"FLOR SERRANO";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 1116;"AARON";"GARCIA BERNABEU";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 1117;"ABIGAILLE";"GIL MUNERA";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
-1118;"MARCOS";"GILABERT IBAÑEZ";0;;0;;0;;0;;0;;0;;1;"- ""cienc sociales mod c y s I"" subrayado todo el libro";1;"- ""cienc sociales mod c y s I"" subrayado todo el libro
--Valores sin forro";0;;0;;0;;0;
+1118;"MARCOS";"GILABERT IBAÑEZ";0;;0;;0;;0;;0;;0;;1;"- ""cienc sociales mod c y s I"" subrayado todo el libro";1;"- ""cienc sociales mod c y s I"" subrayado todo el libro -Valores sin forro";0;;0;;0;;0;
 1119;"CRISTINA";"GIMENEZ LOPEZ";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 1120;"PAULA";"GOMEZ RUBIO";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 1121;"JOSE LUIS";"GONZALEZ MARTINEZ";0;;0;;0;;0;;0;;0;;0;;0;;1;;0;;0;;0;
@@ -495,7 +494,8 @@ Ciencias sociales subrayado con lapiz";0;;0;;0;;0;
 6084;"LORENA";"BROTONS AYALA";0;;0;;0;;0;;1;"-Geografía alguna página subrayada con marcador";1;;1;"-castellano subrayado a lapiz";0;;0;;0;;0;;0;
 6085;"LAURA";"PINAR CHICO DE GUZMAN";1;;1;;1;;1;;0;;0;;1;;0;;0;;0;;0;;0;
 6086;"PAULA";"VICEDO GARCIA";0;;0;;0;;0;;0;;0;;1;;1;;0;;0;;0;;0;
-6087;"BRENDA";"DE LA ROSA BLANQUER";0;;0;;0;;0;;1;;1;;1;"-historia subrayado";0;;0;;0;;0;;0;
+6087;"BRENDA";"DE LA ROSA BLANQUER";0;;0;;0;;0;;1;;1;;1;"- historia subrayado. 
+- Recibe prestado un libro de biología de tercero para recuperación.";0;;0;;0;;0;;0;
 6088;"NAIARA";"ALVILLAR GALLEGO";0;;0;;0;;0;;0;;0;;1;;1;;0;;0;;0;;0;
 6089;"JESUS PEDRO";"CASQUERO GALLEGO";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 6090;"JULIO";"PEÑALVER GARCIA";0;;0;;0;;0;;0;;0;;1;;1;;0;;0;;0;;0;
@@ -705,7 +705,8 @@ musica tiene algo de lapiz";1;;0;;0;;0;"-Valenciano escrito a lápiz";0;;0;;0;;0
 6277;"PAULA ";"GONZALEZ MARTINEZ";0;;0;;0;;0;;1;"-B&G3 muy subrayado";1;;1;;0;;0;;0;;0;;0;
 6278;"CARMEN MARIA ";"HERNANDEZ ORTEGA";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 6279;"SERGIO";"HERRERO ALCAÑIZ";0;;0;;0;;0;;1;"-GH3 subrayado a lápiz
--Valenciano subrayado a lápiz";1;;1;"-Hiatoria, inglés y valenciano subraydo a lápiz";0;;0;;0;;0;;0;
+-Valenciano subrayado a lápiz";1;;1;"- Historia, inglés y valenciano subraydo a lápiz
+- Recibe FyQ de tercero para recuperación";0;;0;;0;;0;;0;
 6280;"ALVARO";"JUAN AGUADO";0;;0;;0;;0;;1;;1;"-música algo subrayado";1;"-valenciano subrayado a lapiz y bordes estropeados
 -historia subrayado a lapiz";0;;0;;0;;0;;0;
 6281;"SARA";"LUZON MONSERRATE";0;;0;;0;;0;;1;;1;;1;"-valenciano, castellano subrayado a lapiz y bordes rotos
@@ -1730,3 +1731,4 @@ musica escrito a lapiz";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 6870;"Casandra";"Rubio Bernabé";0;;0;;1;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 6871;"Carla";"Segura Martín";0;;0;;1;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 6872;"Luis";"Santana Rosales";0;;0;;1;"Llega en Febrero desde Canarias";0;;0;;0;;0;;0;;0;;0;;0;;0;
+6873;"Euheniia";"Haidarzhy";0;;0;;1;"Llega en Marzo desde Ukrania";0;;0;;0;;0;;0;;0;;0;;0;;0;
