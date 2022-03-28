@@ -1,4 +1,4 @@
-cod;nombre;apellidos;1esopres;1esopresobs;1esodev;1esodevobs;2esopres;2esopresobs;2esodev;2esodevobs;3esopres;3esopresobs;3esodev;3esodevobs;4esopres;4esopresobs;4esodev;4esodevobs;1fpbpres;1fpbpresobs;1fpbdev;1fpbdevobs;2fpbpres;2fpbpresobs;2fpbdev;2fpbdevobs
+id;nombre;apellidos;esopres1;esopresobs1;esodev1;esodevobs1;esopres2;esopresobs2;esodev2;esodevobs2;esopres3;esopresobs3;esodev3;esodevobs3;esopres4;esopresobs4;esodev4;esodevobs4;fpbpres1;fpbpresobs1;fpbdev1;fpbdevobs1;fpbpres2;fpbpresobs2;fpbdev2;fpbdevobs2
 1005;"ADRIAN";"COSTA COLON";0;;0;;1;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 1006;"VICENTE";"DELTELL CARRILLO";0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;;0;
 1009;;"GOMEZ BEL";0;;0;;0;;0;;0;;0;;1;;1;;0;;0;;0;;0;
