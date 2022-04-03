@@ -32,3 +32,26 @@ exports.findOne = (req, res) => {
       });
     });
 };
+
+exports.update = (req, res) => {
+  const id = req.params.id;
+  Alumno.update(req.body, {
+    where: { id: id },
+  })
+    .then((num) => {
+      if (num == 1) {
+        res.send({
+          message: "Pupil was updated successfully.",
+        });
+      } else {
+        res.send({
+          message: `Cannot update pupil with id=${id}. Maybe Pupil was not found or req.body is empty!`,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error updating Pupil with id=" + id,
+      });
+    });
+};

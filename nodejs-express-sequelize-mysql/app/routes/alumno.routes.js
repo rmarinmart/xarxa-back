@@ -4,5 +4,6 @@ module.exports = (app) => {
   // Retrieve all pupils
   router.get("/", alumnos.findAll);
   router.get("/:id", alumnos.findOne);
+  router.put("/:id", alumnos.update);
   app.use("/api/alumnos", router);
 };
