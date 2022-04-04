@@ -2,8 +2,13 @@ const db = require("../models");
 const Alumno = db.alumnos;
 const Op = db.Sequelize.Op;
 
-exports.findAll = (req, res) => {
-  Alumno.findAll()
+search = (req, res) => {
+  const searchTerm = req.query.searchTerm;
+  var condition = null;
+  if(!isNaN(searchTerm)) condition = { id: { [Op.like]: `%${searchTerm}%` } };
+  else condition ={[Op.or]: {nombre: { [Op.like]: `%${searchTerm}%` }, apellidos: { [Op.like]: `%${searchTerm}%` }}};
+  
+  Alumno.findAll({ where: condition })
     .then((data) => {
       res.send(data);
     })
@@ -12,6 +17,22 @@ exports.findAll = (req, res) => {
         message: err.message || "Some error occurred while retrieving pupils.",
       });
     });
+};
+
+
+exports.findAll = (req, res) => {
+  if(req.query.searchTerm && req.query.searchTerm !== "") search(req, res);
+  else {
+    Alumno.findAll()
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message: err.message || "Some error occurred while retrieving pupils.",
+        });
+      });
+    }
 };
 
 exports.findOne = (req, res) => {
