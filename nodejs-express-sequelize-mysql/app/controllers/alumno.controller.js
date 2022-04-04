@@ -4,10 +4,20 @@ const Op = db.Sequelize.Op;
 
 search = (req, res) => {
   const searchTerm = req.query.searchTerm;
+  const terms = searchTerm.split(" ");
   var condition = null;
-  if(!isNaN(searchTerm)) condition = { id: { [Op.like]: `%${searchTerm}%` } };
-  else condition ={[Op.or]: {nombre: { [Op.like]: `%${searchTerm}%` }, apellidos: { [Op.like]: `%${searchTerm}%` }}};
-  
+  if (terms.length == 1 && !isNaN(searchTerm))
+    condition = { id: { [Op.like]: `%${searchTerm}%` } };
+  else {
+    const clauses = [];
+    console.log(terms);
+    terms.forEach((term) => {
+      clauses.push({ nombre: { [Op.like]: `%${term}%` } });
+      clauses.push({ apellidos: { [Op.like]: `%${term}%` } });
+    });
+    condition = { [Op.or]: clauses };
+  }
+
   Alumno.findAll({ where: condition })
     .then((data) => {
       res.send(data);
@@ -19,9 +29,8 @@ search = (req, res) => {
     });
 };
 
-
 exports.findAll = (req, res) => {
-  if(req.query.searchTerm && req.query.searchTerm !== "") search(req, res);
+  if (req.query.searchTerm && req.query.searchTerm !== "") search(req, res);
   else {
     Alumno.findAll()
       .then((data) => {
@@ -29,10 +38,11 @@ exports.findAll = (req, res) => {
       })
       .catch((err) => {
         res.status(500).send({
-          message: err.message || "Some error occurred while retrieving pupils.",
+          message:
+            err.message || "Some error occurred while retrieving pupils.",
         });
       });
-    }
+  }
 };
 
 exports.findOne = (req, res) => {
