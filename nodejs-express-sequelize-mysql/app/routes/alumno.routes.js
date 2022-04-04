@@ -3,6 +3,7 @@ module.exports = (app) => {
   var router = require("express").Router();
   // Retrieve all pupils
   router.get("/", alumnos.findAll);
+  router.post("/", alumnos.create);
   router.get("/:id", alumnos.findOne);
   router.put("/:id", alumnos.update);
   app.use("/api/alumnos", router);

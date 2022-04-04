@@ -4,10 +4,10 @@ const Op = db.Sequelize.Op;
 
 search = (req, res) => {
   const searchTerm = req.query.searchTerm;
-  const terms = searchTerm.split(" ");
+  const terms = searchTerm.trim().split(" ");
   var condition = null;
-  if (terms.length == 1 && !isNaN(searchTerm))
-    condition = { id: { [Op.like]: `%${searchTerm}%` } };
+  if (terms.length == 1 && !isNaN(terms[0]))
+    condition = { id: { [Op.like]: `%${terms[0]}%` } };
   else {
     const clauses = [];
     console.log(terms);
@@ -83,6 +83,54 @@ exports.update = (req, res) => {
     .catch((err) => {
       res.status(500).send({
         message: "Error updating Pupil with id=" + id,
+      });
+    });
+};
+
+exports.create = (req, res) => {
+  // Validate request
+  if (!req.body.nombre || !req.body.apellidos) {
+    res.status(400).send({
+      message: "¡Es necesario establecer nombre y apellidos!",
+    });
+    return;
+  }
+
+  const alumno = {
+    nombre: req.body.nombre,
+    apellidos: req.body.apellidos,
+  };
+
+  Alumno.create(alumno)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Some error occurred while creating the pupil.",
+      });
+    });
+};
+
+exports.delete = (req, res) => {
+  const id = req.params.id;
+  Alumno.destroy({
+    where: { id: id },
+  })
+    .then((num) => {
+      if (num == 1) {
+        res.send({
+          message: "Pupil was deleted successfully!",
+        });
+      } else {
+        res.send({
+          message: `Cannot delete Pupil with id=${id}. Maybe Pupil was not found!`,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Could not delete Pupil with id=" + id,
       });
     });
 };
