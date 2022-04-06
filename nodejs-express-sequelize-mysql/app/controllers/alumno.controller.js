@@ -18,10 +18,33 @@ search = (req, res) => {
     condition = { [Op.or]: clauses };
   }
 
+  const normalizeString = (text) => {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
+
+  const calculateWeight = (candidate, terms) => {
+    let weight = 0;
+    terms.forEach((term)=> {
+      if(normalizeString(candidate.dataValues.nombre).includes(normalizeString(term))) weight++;
+      if(normalizeString(candidate.dataValues.apellidos).includes(normalizeString(term))) weight++;
+    })
+    return weight;
+  }
+
   Alumno.findAll({ where: condition })
     .then((data) => {
+      if(terms.length > 0) {
+        data.sort((a,b)=> {
+          const aWeight = calculateWeight(a, terms);
+          const bWeight = calculateWeight(b, terms);
+          if(aWeight > bWeight) return -1;
+          if(aWeight < bWeight) return 1;
+          return 0;
+        });
+      }
       res.send(data);
     })
+  
     .catch((err) => {
       res.status(500).send({
         message: err.message || "Some error occurred while retrieving pupils.",
