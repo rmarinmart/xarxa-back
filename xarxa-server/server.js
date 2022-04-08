@@ -11,11 +11,20 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+const path = __dirname + '/app/views/';
+app.use(express.static(path));
+
+
+
 const db = require("./app/models");
 db.sequelize.sync();
 /*db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
 });*/
+
+app.get('/', function (req,res) {
+  res.sendFile(path + "index.html");
+});
 
 // simple route
 app.get("/", (req, res) => {
