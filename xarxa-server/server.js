@@ -1,10 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-/*var corsOptions = {
-  //origin: "http://localhost:3000",
-  origin: "*",
-};*/
+
 app.use(cors());
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -18,17 +15,13 @@ app.use(express.static(path));
 
 const db = require("./app/models");
 db.sequelize.sync();
-/*db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-});*/
 
 app.get('/', function (req,res) {
   res.sendFile(path + "index.html");
 });
 
-// simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to my application." });
+  res.json({ message: "Bienvenido a Xarxa Back" });
 });
 // set port, listen for requests
 require("./app/routes/alumno.routes")(app);

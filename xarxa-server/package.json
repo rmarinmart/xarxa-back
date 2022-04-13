@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-express-sequelize-mysql",
+  "name": "xarxa-back",
   "version": "1.0.0",
-  "description": "Node.js Rest APIs with Express, Sequelize & MySQL",
+  "description": "Backend para servicio web de gestión de la Xarxa de llibres en IES Poeta Paco Mollá",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

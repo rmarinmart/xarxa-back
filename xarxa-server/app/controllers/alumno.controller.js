@@ -47,7 +47,7 @@ search = (req, res) => {
   
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Some error occurred while retrieving pupils.",
+        message: err.message || "Hubo algún error obtienendo la lista de alumnos.",
       });
     });
 };
@@ -62,7 +62,7 @@ exports.findAll = (req, res) => {
       .catch((err) => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving pupils.",
+            err.message || "Hubo algún error obteniendo la lista de alumnos",
         });
       });
   }
@@ -76,13 +76,13 @@ exports.findOne = (req, res) => {
         res.send(data);
       } else {
         res.status(404).send({
-          message: `Cannot find pupil with id=${id}.`,
+          message: `No se ha encontrado ningún alumno con el id=${id}.`,
         });
       }
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error retrieving pupil with id=" + id,
+        message: "Error obteniendo el alumno con id=" + id,
       });
     });
 };
@@ -95,17 +95,17 @@ exports.update = (req, res) => {
     .then((num) => {
       if (num == 1) {
         res.send({
-          message: "Pupil was updated successfully.",
+          message: "El alumno se ha actualizado correctamente.",
         });
       } else {
         res.send({
-          message: `Cannot update pupil with id=${id}. Maybe Pupil was not found or req.body is empty!`,
+          message: `No se puede actualizar el alumno con id=${id}. Puede que no se haya encontrado el alumno o que el cuerpo de la petición estuviera vacío`,
         });
       }
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error updating Pupil with id=" + id,
+        message: "Error actualizando alumno con id=" + id,
       });
     });
 };
@@ -130,7 +130,7 @@ exports.create = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Some error occurred while creating the pupil.",
+        message: err.message || "Hubo un error creando el alumno en la base de datos.",
       });
     });
 };
@@ -143,17 +143,17 @@ exports.delete = (req, res) => {
     .then((num) => {
       if (num == 1) {
         res.send({
-          message: "Pupil was deleted successfully!",
+          message: "El alumno fue borrado satisfactoriamente.",
         });
       } else {
         res.send({
-          message: `Cannot delete Pupil with id=${id}. Maybe Pupil was not found!`,
+          message: `No se pudo borrar el alumno con id=${id}. Puede que el alumno ya no esté en la base de datos.`,
         });
       }
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Could not delete Pupil with id=" + id,
+        message: "No se pudo borrar el alumno con id=" + id,
       });
     });
 };
