@@ -15,4 +15,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.alumnos = require("./alumno.model.js")(sequelize, Sequelize);
+db.incidencias = require("./incidencia.model.js")(sequelize, Sequelize);
+db.alumnos.hasMany(db.incidencias);
+db.incidencias.belongsTo(db.alumnos);
 module.exports = db;
