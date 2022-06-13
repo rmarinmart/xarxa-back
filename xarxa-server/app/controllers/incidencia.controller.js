@@ -4,8 +4,9 @@ const Op = db.Sequelize.Op;
 
 exports.search = (req, res) => {
   var condition = {};
-  if (req.body.alumnoId)
-    condition = { alumnoId: { [Op.eq]: `${req.body.alumnoId}` } };
+  console.log(req.query);
+  if (req.query && req.query.alumnoId)
+    condition = { alumnoId: { [Op.eq]: `${req.query.alumnoId}` } };
   Incidencia.findAll({ where: condition })
     .then((data) => {
       res.send(data);
