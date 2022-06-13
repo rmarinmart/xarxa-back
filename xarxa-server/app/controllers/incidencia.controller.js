@@ -40,10 +40,11 @@ exports.findOne = (req, res) => {
 
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.alumnoId || !req.body.descripcion || !req.body.curso) {
+  if (!req.body.alumnoId || !req.body.descripcion || req.body.curso === null) {
     res.status(400).send({
-      message: "¡Es necesario establecer alumno, curso y descripción de la incidencia!", 
-       });
+      message:
+        "¡Es necesario establecer alumno, curso y descripción de la incidencia!",
+    });
     return;
   }
 
