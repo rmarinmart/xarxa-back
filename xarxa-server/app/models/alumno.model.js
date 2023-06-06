@@ -83,6 +83,30 @@ module.exports = (sequelize, Sequelize) => {
     fpbdevobs2: {
       type: Sequelize.STRING,
     },
+    batchpres1: {
+      type: Sequelize.BOOLEAN,
+    },
+    batchpresobs1: {
+      type: Sequelize.STRING,
+    },
+    batchdev1: {
+      type: Sequelize.BOOLEAN,
+    },
+    batchdevobs1: {
+      type: Sequelize.STRING,
+    },
+    batchpres2: {
+      type: Sequelize.BOOLEAN,
+    },
+    batchpresobs2: {
+      type: Sequelize.STRING,
+    },
+    batchdev2: {
+      type: Sequelize.BOOLEAN,
+    },
+    batchdevobs2: {
+      type: Sequelize.STRING,
+    },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
   });
