@@ -52,6 +52,14 @@ CREATE TABLE `alumnos` (
   `fpbpresobs2` text COLLATE utf8_spanish_ci,
   `fpbdev2` tinyInt(1) DEFAULT NULL,
   `fpbdevobs2` text COLLATE utf8_spanish_ci,
+  `batchpres1` tinyInt(1) DEFAULT NULL,
+  `batchpresobs1` text COLLATE utf8_spanish_ci,
+  `batchdev1` tinyInt(1) DEFAULT NULL,
+  `batchdevobs1` text COLLATE utf8_spanish_ci,
+  `batchpres2` tinyInt(1) DEFAULT NULL,
+  `batchpresobs2` text COLLATE utf8_spanish_ci,
+  `batchdev2` tinyInt(1) DEFAULT NULL,
+  `batchdevobs2` text COLLATE utf8_spanish_ci,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
